@@ -7,6 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.android.notepadapp.ui.screen.homepage.HomeScreen
 
 @Composable
 fun NavScreen(navController: NavHostController, modifier: Modifier = Modifier) {
@@ -17,7 +18,7 @@ fun NavScreen(navController: NavHostController, modifier: Modifier = Modifier) {
     ) {
 
         composable(NavRoute.HOME_SCREE.name) {
-            Text(text = "Hello Note Screen 1....")
+            HomeScreen()
         }
 
         composable(NavRoute.NOTE_SCREEN.name) {

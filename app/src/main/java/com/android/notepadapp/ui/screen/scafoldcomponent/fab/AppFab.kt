@@ -1,4 +1,4 @@
-package com.android.notepadapp.ui.screen
+package com.android.notepadapp.ui.screen.scafoldcomponent.fab
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add

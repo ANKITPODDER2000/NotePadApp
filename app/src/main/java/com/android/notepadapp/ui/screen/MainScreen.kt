@@ -7,7 +7,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import com.android.notepadapp.ui.screen.nav.NavScreen
-import com.android.notepadapp.ui.screen.topbar.AppTopBar
+import com.android.notepadapp.ui.screen.scafoldcomponent.fab.AppFab
+import com.android.notepadapp.ui.screen.scafoldcomponent.topbar.AppTopBar
 
 @Composable
 fun MainScreen() {

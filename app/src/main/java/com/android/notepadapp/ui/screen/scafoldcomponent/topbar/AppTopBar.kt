@@ -1,4 +1,4 @@
-package com.android.notepadapp.ui.screen.topbar
+package com.android.notepadapp.ui.screen.scafoldcomponent.topbar
 
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.TopAppBar
