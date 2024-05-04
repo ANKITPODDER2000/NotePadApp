@@ -1,5 +1,6 @@
 package com.android.notepadapp.ui.screen.scafoldcomponent.bottomsheet
 
+import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -25,44 +26,48 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AppBottomSheet(sheetState: SheetState) {
-    ModalBottomSheet(
-        onDismissRequest = {
-            CoroutineScope(Dispatchers.IO).launch {
-                if (sheetState.isVisible) sheetState.hide()
-            }
-        },
-        sheetState = sheetState
-    ) {
-        Column(modifier = Modifier.padding(32.dp, 8.dp, 32.dp, 48.dp)) {
-            Icon(
-                imageVector = Icons.Filled.AddCircle,
-                contentDescription = "Add some note",
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .align(Alignment.CenterHorizontally)
-            )
-            Spacer(modifier = Modifier.height(16.dp))
-            Text(
-                text = "Which type of document you want to create?",
-                textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth()
-            )
-            Spacer(modifier = Modifier.height(16.dp))
-            Row {
-                Button(
-                    onClick = { /*TODO*/ }, modifier = Modifier
-                        .weight(1f)
-                        .padding(end = 8.dp)
-                ) {
-                    Text("Smart Note")
-                }
-                Button(
-                    onClick = { /*TODO*/ }, modifier = Modifier
-                        .weight(1f)
-                        .padding(start = 8.dp)
-                ) {
-                    Text("Text Note")
+fun AppBottomSheet(
+    sheetState: SheetState,
+    isBottomSheetVisible: Boolean,
+    hideBottomSheet: () -> Unit,
+) {
+    if (isBottomSheetVisible) {
+        ModalBottomSheet(
+            onDismissRequest = {
+                hideBottomSheet()
+            },
+            sheetState = sheetState
+        ) {
+            Column(modifier = Modifier.padding(32.dp, 8.dp, 32.dp, 48.dp)) {
+                Icon(
+                    imageVector = Icons.Filled.AddCircle,
+                    contentDescription = "Add some note",
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .align(Alignment.CenterHorizontally)
+                )
+                Spacer(modifier = Modifier.height(16.dp))
+                Text(
+                    text = "Which type of document you want to create?",
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.fillMaxWidth()
+                )
+                Spacer(modifier = Modifier.height(16.dp))
+                Row {
+                    Button(
+                        onClick = { /*TODO*/ }, modifier = Modifier
+                            .weight(1f)
+                            .padding(end = 8.dp)
+                    ) {
+                        Text("Smart Note")
+                    }
+                    Button(
+                        onClick = { /*TODO*/ }, modifier = Modifier
+                            .weight(1f)
+                            .padding(start = 8.dp)
+                    ) {
+                        Text("Text Note")
+                    }
                 }
             }
         }

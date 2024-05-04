@@ -2,8 +2,8 @@ package com.android.notepadapp.ui.screen.nav
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.SheetState
 import androidx.compose.material3.Text
-import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
@@ -13,7 +13,13 @@ import com.android.notepadapp.ui.screen.homepage.HomeScreen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun NavScreen(navController: NavHostController, modifier: Modifier = Modifier) {
+fun NavScreen(
+    sheetState: SheetState,
+    isBottomSheetVisible: Boolean,
+    navController: NavHostController,
+    hideBottomSheet: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
     NavHost(
         navController = navController,
         startDestination = NavRoute.HOME_SCREE.name,
@@ -21,7 +27,7 @@ fun NavScreen(navController: NavHostController, modifier: Modifier = Modifier) {
     ) {
 
         composable(NavRoute.HOME_SCREE.name) {
-            HomeScreen(rememberModalBottomSheetState())
+            HomeScreen(sheetState, isBottomSheetVisible, hideBottomSheet)
         }
 
         composable(NavRoute.NOTE_SCREEN.name) {

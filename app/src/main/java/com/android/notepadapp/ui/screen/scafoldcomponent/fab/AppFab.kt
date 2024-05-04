@@ -11,9 +11,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun AppFab() {
+fun AppFab(btnClickHandler: () -> Unit) {
     FloatingActionButton(
-        onClick = { /*TODO*/ },
+        onClick = {
+            btnClickHandler()
+        },
         containerColor = Color.LightGray,
         elevation = FloatingActionButtonDefaults.elevation(0.dp)
     ) {
@@ -24,5 +26,5 @@ fun AppFab() {
 @Preview
 @Composable
 fun PreviewAppFab() {
-    AppFab()
+    AppFab {}
 }

@@ -11,9 +11,9 @@ import com.android.notepadapp.ui.screen.scafoldcomponent.bottomsheet.AppBottomSh
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(sheetState: SheetState) {
+fun HomeScreen(sheetState: SheetState, isBottomSheetVisible: Boolean, hideBottomSheet: () -> Unit) {
     Column(modifier = Modifier.fillMaxSize()) {
         Text(text = "Home Page 1....")
-        AppBottomSheet(sheetState)
+        AppBottomSheet(sheetState, isBottomSheetVisible, hideBottomSheet)
     }
 }
