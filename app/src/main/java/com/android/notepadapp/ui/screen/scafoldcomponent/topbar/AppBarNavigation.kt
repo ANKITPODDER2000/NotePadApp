@@ -8,8 +8,8 @@ import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 
 @Composable
-fun AppBarNavigation() {
-    IconButton(onClick = { /*TODO*/ }) {
+fun AppBarNavigation(appNavigationHandler: () -> Unit) {
+    IconButton(onClick = { appNavigationHandler() }) {
         Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back Icon")
     }
 }

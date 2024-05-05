@@ -9,10 +9,10 @@ import androidx.compose.ui.tooling.preview.Preview
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AppTopBar(topAppBarTitle: String) {
+fun AppTopBar(topAppBarTitle: String, appNavigationHandler: () -> Unit) {
     TopAppBar(
         title = { AppBarTitle(topAppBarTitle) },
-        navigationIcon = { AppBarNavigation() },
+        navigationIcon = { AppBarNavigation(appNavigationHandler) },
         colors = TopAppBarDefaults.topAppBarColors(containerColor = Color.LightGray)
     )
 }
@@ -20,5 +20,5 @@ fun AppTopBar(topAppBarTitle: String) {
 @Preview(showSystemUi = true)
 @Composable
 fun PreviewAppTopBar() {
-    AppTopBar("NotePadApp")
+    AppTopBar("NotePadApp") { }
 }
