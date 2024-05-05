@@ -1,6 +1,7 @@
 package com.android.notepadapp.di
 
 import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 
-class MainApp: Application() {
-}
+@HiltAndroidApp
+class MainApp : Application()

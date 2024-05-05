@@ -14,21 +14,23 @@ import androidx.compose.ui.unit.dp
 import com.android.notepadapp.testhelper.AppFabTestHelper
 
 @Composable
-fun AppFab(btnClickHandler: () -> Unit) {
-    FloatingActionButton(
-        onClick = {
-            btnClickHandler()
-        },
-        containerColor = Color.LightGray,
-        elevation = FloatingActionButtonDefaults.elevation(0.dp),
-        modifier = Modifier.testTag(AppFabTestHelper.FAB_TEST_TAG)
-    ) {
-        Icon(imageVector = Icons.Filled.Add, contentDescription = null)
+fun AppFab(isFabVisible: Boolean, btnClickHandler: () -> Unit) {
+    if (isFabVisible) {
+        FloatingActionButton(
+            onClick = {
+                btnClickHandler()
+            },
+            containerColor = Color.LightGray,
+            elevation = FloatingActionButtonDefaults.elevation(0.dp),
+            modifier = Modifier.testTag(AppFabTestHelper.FAB_TEST_TAG)
+        ) {
+            Icon(imageVector = Icons.Filled.Add, contentDescription = null)
+        }
     }
 }
 
 @Preview
 @Composable
 fun PreviewAppFab() {
-    AppFab {}
+    AppFab(true) {}
 }
