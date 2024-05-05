@@ -18,8 +18,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.android.notepadapp.testhelper.AppBottomSheetTestHelper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -36,7 +38,8 @@ fun AppBottomSheet(
             onDismissRequest = {
                 hideBottomSheet()
             },
-            sheetState = sheetState
+            sheetState = sheetState,
+            modifier = Modifier.testTag(AppBottomSheetTestHelper.MODAL_BOTTOM_SHEET_TEST_TAG)
         ) {
             Column(modifier = Modifier.padding(32.dp, 8.dp, 32.dp, 48.dp)) {
                 Icon(
