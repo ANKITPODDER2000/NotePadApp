@@ -71,6 +71,7 @@ dependencies {
 
     // Navigation dependency
     implementation(libs.androidx.navigation.compose)
+    androidTestImplementation(libs.androidx.navigation.testing)
 
     // Hilt Dependency
     implementation(libs.hilt.android)
