@@ -27,6 +27,7 @@ fun MainScreen(
     val navController = rememberNavController()
     navHandlerViewModel.setCurrentBackStackEntryAsState(navController.currentBackStackEntryAsState())
     val isFabVisible by navHandlerViewModel.isFabVisible.collectAsState()
+    val topAppBarTitle by navHandlerViewModel.topAppBarTitle.collectAsState()
 
     val sheetState = rememberModalBottomSheetState()
     val coroutineScope = rememberCoroutineScope()
@@ -35,7 +36,7 @@ fun MainScreen(
     bottomSheetHandlerViewModel.setSheetState(sheetState)
 
     Scaffold(
-        topBar = { AppTopBar() },
+        topBar = { AppTopBar(topAppBarTitle) },
         floatingActionButton = {
             AppFab(isFabVisible) {
                 coroutineScope.launch {
