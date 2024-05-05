@@ -1,4 +1,4 @@
-package com.android.notepadapp.ui.screen.scafoldcomponent.bottomsheet
+package com.android.notepadapp.ui.screen.homepage.bottomsheet
 
 import android.util.Log
 import androidx.compose.foundation.layout.Column

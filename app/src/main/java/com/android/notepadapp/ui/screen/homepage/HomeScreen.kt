@@ -7,7 +7,7 @@ import androidx.compose.material3.SheetState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.android.notepadapp.ui.screen.scafoldcomponent.bottomsheet.AppBottomSheet
+import com.android.notepadapp.ui.screen.homepage.bottomsheet.AppBottomSheet
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
