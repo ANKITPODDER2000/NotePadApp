@@ -23,7 +23,8 @@ class HomeScreenTest {
         composeRule.setContent {
             HomeScreen(
                 sheetState = rememberModalBottomSheetState(),
-                isBottomSheetVisible = true
+                isBottomSheetVisible = true,
+                { }
             ) { }
         }
         composeRule.onNodeWithTag(AppBottomSheetTestHelper.MODAL_BOTTOM_SHEET_TEST_TAG).assertExists("Bottom Sheet should be available when isBottomSheetVisible is true")
@@ -34,7 +35,8 @@ class HomeScreenTest {
         composeRule.setContent {
             HomeScreen(
                 sheetState = rememberModalBottomSheetState(),
-                isBottomSheetVisible = false
+                isBottomSheetVisible = false,
+                { }
             ) { }
         }
         composeRule.onNodeWithTag(AppBottomSheetTestHelper.MODAL_BOTTOM_SHEET_TEST_TAG).assertDoesNotExist()

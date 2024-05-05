@@ -27,10 +27,12 @@ fun NavScreen(
     ) {
 
         composable(NavRoute.HOME_SCREE.name) {
-            HomeScreen(sheetState, isBottomSheetVisible, hideBottomSheet)
+            HomeScreen(sheetState, isBottomSheetVisible, hideBottomSheet) {
+                navController.navigate(NavRoute.CREATE_NOTE_SCREEN.name)
+            }
         }
 
-        composable(NavRoute.NOTE_SCREEN.name) {
+        composable(NavRoute.CREATE_NOTE_SCREEN.name) {
             Text(text = "Hello Note Screen 2....")
         }
     }

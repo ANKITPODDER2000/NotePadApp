@@ -11,9 +11,14 @@ import com.android.notepadapp.ui.screen.homepage.bottomsheet.AppBottomSheet
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(sheetState: SheetState, isBottomSheetVisible: Boolean, hideBottomSheet: () -> Unit) {
+fun HomeScreen(
+    sheetState: SheetState,
+    isBottomSheetVisible: Boolean,
+    hideBottomSheet: () -> Unit,
+    createNewTextDocument: () -> Unit,
+) {
     Column(modifier = Modifier.fillMaxSize()) {
         Text(text = "Home Page 1....")
-        AppBottomSheet(sheetState, isBottomSheetVisible, hideBottomSheet)
+        AppBottomSheet(sheetState, isBottomSheetVisible, hideBottomSheet, createNewTextDocument)
     }
 }
