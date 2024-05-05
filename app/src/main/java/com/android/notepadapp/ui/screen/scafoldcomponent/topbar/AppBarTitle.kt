@@ -4,6 +4,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 
 @Composable
-fun AppBarTitle() {
-    Text(text = "NotePadApp...")
+fun AppBarTitle(topAppBarTitle: String) {
+    Text(text = topAppBarTitle)
 }

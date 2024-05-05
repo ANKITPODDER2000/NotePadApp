@@ -1,6 +1,5 @@
-package com.android.notepadapp.ui.screen.scafoldcomponent.bottomsheet
+package com.android.notepadapp.ui.screen.homepage.bottomsheet
 
-import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -22,9 +21,6 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.android.notepadapp.testhelper.AppBottomSheetTestHelper
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -32,6 +28,7 @@ fun AppBottomSheet(
     sheetState: SheetState,
     isBottomSheetVisible: Boolean,
     hideBottomSheet: () -> Unit,
+    createNewTextDocument: () -> Unit,
 ) {
     if (isBottomSheetVisible) {
         ModalBottomSheet(
@@ -56,22 +53,7 @@ fun AppBottomSheet(
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(modifier = Modifier.height(16.dp))
-                Row {
-                    Button(
-                        onClick = { /*TODO*/ }, modifier = Modifier
-                            .weight(1f)
-                            .padding(end = 8.dp)
-                    ) {
-                        Text("Smart Note")
-                    }
-                    Button(
-                        onClick = { /*TODO*/ }, modifier = Modifier
-                            .weight(1f)
-                            .padding(start = 8.dp)
-                    ) {
-                        Text("Text Note")
-                    }
-                }
+                CreateDocumentButton(hideBottomSheet, createNewTextDocument)
             }
         }
     }

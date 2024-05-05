@@ -68,7 +68,7 @@ class NavScreenTest {
                 navController = navController,
                 hideBottomSheet = { }
             )
-            navController.navigate(NavRoute.NOTE_SCREEN.name)
+            navController.navigate(NavRoute.CREATE_NOTE_SCREEN.name)
         }
 
         composeRule

@@ -7,13 +7,18 @@ import androidx.compose.material3.SheetState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.android.notepadapp.ui.screen.scafoldcomponent.bottomsheet.AppBottomSheet
+import com.android.notepadapp.ui.screen.homepage.bottomsheet.AppBottomSheet
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(sheetState: SheetState, isBottomSheetVisible: Boolean, hideBottomSheet: () -> Unit) {
+fun HomeScreen(
+    sheetState: SheetState,
+    isBottomSheetVisible: Boolean,
+    hideBottomSheet: () -> Unit,
+    createNewTextDocument: () -> Unit,
+) {
     Column(modifier = Modifier.fillMaxSize()) {
         Text(text = "Home Page 1....")
-        AppBottomSheet(sheetState, isBottomSheetVisible, hideBottomSheet)
+        AppBottomSheet(sheetState, isBottomSheetVisible, hideBottomSheet, createNewTextDocument)
     }
 }
